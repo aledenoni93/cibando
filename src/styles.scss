@@ -5,7 +5,7 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
-.bg-dark, header {
+.bg-red, header {
   background-color: #8e210b!important;
 }
 
@@ -13,3 +13,17 @@ body{
 
 html, body { height: 100%; }
 
+.carousel-caption {
+  top: 27rem;
+  bottom: auto;
+
+  h3 {
+    font-family: "Homemade Apple", cursive;
+    font-size: 40px;
+    text-shadow: black 2px 3px 3px;
+  }
+}
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
