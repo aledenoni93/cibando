@@ -23,37 +23,26 @@
   </nav>
 </header>
 
+<app-carousel></app-carousel>
 
-<ngb-carousel *ngIf="images.length > 1">
-	<ng-template ngbSlide *ngFor="let image of images">
-		<div class="picsum-img-wrapper">
-			<img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
-		</div>
-		<div class="carousel-caption">
-			<h3>{{image.label}}</h3>
-		</div>
-	</ng-template>
-</ngb-carousel>
 
-<div *ngIf="images.length == 1" class = "single-image">
-  <img [src]="percorso + images[0].id + '.jpg' " [alt]="images[0].label" />
-</div>
 
 
 <div id="main-container">
 
   <div class="container-titolo">
-    <h2>App di esempio</h2>
-    <p class="paragrafo">Ecco un testo dentro al paragrafo</p>
+    <h2 [ngClass]="evidenziato ? 'testoEvidenziato': ''" (click)="onEvidenziazione()" style="cursor: pointer">Benvenuti in Cibando</h2>
+    <p class="paragrafo" [ngStyle]="{'background-color' : evidenziato === true ? 'yellow' : 'white'}">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis perferendis enim dicta qui accusamus suscipit odit sed impedit, voluptatum necessitatibus tempore. Eveniet consequuntur distinctio odio cum atque vero, suscipit vel, fugiat provident doloribus, minus voluptatum fuga autem incidunt saepe quibusdam! Iure, placeat animi in assumenda voluptates doloribus ullam vitae atque tempore quae laboriosam libero itaque magnam repellat dolorum rem, beatae ad, eius sequi? Sunt asperiores iure placeat consequatur culpa repudiandae saepe, fugiat consequuntur minus nobis repellendus laboriosam, earum voluptatibus ab eos ullam iusto. Dolorem autem assumenda harum laboriosam praesentium tempore dolorum deleniti tempora quis atque libero repudiandae ad excepturi aut, quasi minima, odit asperiores, quisquam quidem molestiae et esse ipsa eveniet. Ratione debitis ut, autem deleniti laborum amet ad hic odio consectetur necessitatibus perferendis animi non accusamus est facilis ab distinctio voluptatum sapiente quia quam quisquam. Deleniti est laudantium alias neque. Veritatis, possimus! Quaerat, accusantium? Nam odio possimus, provident, laboriosam vel aliquid dolorum voluptas cupiditate id laudantium tempore animi inventore sit vero hic autem ipsum alias error temporibus facere tempora praesentium commodi. Ipsum deserunt optio laudantium facere animi, enim libero reiciendis officia ullam dicta nihil voluptatum natus, veniam eligendi suscipit minus iusto molestiae blanditiis! Laboriosam impedit odit laborum repellat. Expedita laborum error ab eaque? Aut doloremque quibusdam repellendus voluptates voluptatibus laborum, suscipit reprehenderit consequatur ad dolor assumenda dicta eaque quae aliquid autem rem blanditiis pariatur cumque, quaerat excepturi corporis. Quos sed dolorum numquam consectetur culpa eaque aliquam ipsum tenetur, architecto ratione reiciendis sapiente asperiores saepe quisquam eos quod voluptatem officiis repudiandae nulla perferendis? Officia nesciunt consequatur sed minima commodi nam est aliquid quae ab ad harum nostrum, reiciendis architecto optio debitis maxime aspernatur, esse doloribus. Incidunt nisi ipsum nostrum id fugit quam sed veniam doloribus voluptate, quo accusantium reiciendis omnis esse eveniet officia. Nulla est deleniti reiciendis dolores animi.</p>
   </div>
 
 </div>
 
+<!-- <input type="text" [(ngModel)]="coloreScelto"><button (click)="cambiaBG()">Cambia</button>
 <div id="contenitore-switch" [ngSwitch]="colore">
-  <div *ngSwitcCase="'verde'" >compare se il colore é VERDE</div>
-  <div *ngSwitchCase="'blu'">compare se il colore é BLU</div>
-  <div *ngSwitchCase="'rosso'">compare se il colore é ROSSO</div>
-  <div *ngSwitchDefault="'rosso'">compare se il colore non é stato scelto</div>
-</div>
+  <div *ngSwitcCase="'green'" [style] ="'background:' + colore">compare se il colore é Verde</div>
+  <div *ngSwitchCase="'red'" [style] ="'background:' + colore">compare se il colore é Rosso</div>
+  <div *ngSwitchCase="'blue'"[style] ="'background:' + colore">compare se il colore é Blu</div>
+  <div *ngSwitchDefault style="background-color: black;">compare se il colore non é stato scelto</div>
+</div> -->
 
 <router-outlet></router-outlet>
