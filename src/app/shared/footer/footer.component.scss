@@ -1,0 +1,25 @@
+.mat-icon {
+  height: 20px;
+  width: 20px;
+  font-size: 21px;
+  padding-top: 2px;
+}
+
+.icona-cibando{
+  width: 60px;
+  margin-right: 5 px;
+
+}
+
+.colore-testo{
+  color: white;
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: white !important;
+}
+
+.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+  max-width: 100%!important;
+}

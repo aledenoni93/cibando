@@ -1,41 +1,4 @@
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-red">
-    <div class="container-fluid">
-      <img src="../assets/images/icona-cibando.png" class="icona-cibando">
-      <a class="navbar-brand" href="#">Cibando</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#"><mat-icon>home</mat-icon>Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><mat-icon>restaurant_menu</mat-icon>Ricette</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><mat-icon>contacts</mat-icon>Contatti</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<app-carousel></app-carousel>
-
-
-
-
-<div id="main-container">
-
-  <div class="container-titolo">
-    <h2 [ngClass]="evidenziato ? 'testoEvidenziato': ''" (click)="onEvidenziazione()" style="cursor: pointer">Benvenuti in Cibando</h2>
-    <p class="paragrafo" [ngStyle]="{'background-color' : evidenziato === true ? 'yellow' : 'white'}">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis perferendis enim dicta qui accusamus suscipit odit sed impedit, voluptatum necessitatibus tempore. Eveniet consequuntur distinctio odio cum atque vero, suscipit vel, fugiat provident doloribus, minus voluptatum fuga autem incidunt saepe quibusdam! Iure, placeat animi in assumenda voluptates doloribus ullam vitae atque tempore quae laboriosam libero itaque magnam repellat dolorum rem, beatae ad, eius sequi? Sunt asperiores iure placeat consequatur culpa repudiandae saepe, fugiat consequuntur minus nobis repellendus laboriosam, earum voluptatibus ab eos ullam iusto. Dolorem autem assumenda harum laboriosam praesentium tempore dolorum deleniti tempora quis atque libero repudiandae ad excepturi aut, quasi minima, odit asperiores, quisquam quidem molestiae et esse ipsa eveniet. Ratione debitis ut, autem deleniti laborum amet ad hic odio consectetur necessitatibus perferendis animi non accusamus est facilis ab distinctio voluptatum sapiente quia quam quisquam. Deleniti est laudantium alias neque. Veritatis, possimus! Quaerat, accusantium? Nam odio possimus, provident, laboriosam vel aliquid dolorum voluptas cupiditate id laudantium tempore animi inventore sit vero hic autem ipsum alias error temporibus facere tempora praesentium commodi. Ipsum deserunt optio laudantium facere animi, enim libero reiciendis officia ullam dicta nihil voluptatum natus, veniam eligendi suscipit minus iusto molestiae blanditiis! Laboriosam impedit odit laborum repellat. Expedita laborum error ab eaque? Aut doloremque quibusdam repellendus voluptates voluptatibus laborum, suscipit reprehenderit consequatur ad dolor assumenda dicta eaque quae aliquid autem rem blanditiis pariatur cumque, quaerat excepturi corporis. Quos sed dolorum numquam consectetur culpa eaque aliquam ipsum tenetur, architecto ratione reiciendis sapiente asperiores saepe quisquam eos quod voluptatem officiis repudiandae nulla perferendis? Officia nesciunt consequatur sed minima commodi nam est aliquid quae ab ad harum nostrum, reiciendis architecto optio debitis maxime aspernatur, esse doloribus. Incidunt nisi ipsum nostrum id fugit quam sed veniam doloribus voluptate, quo accusantium reiciendis omnis esse eveniet officia. Nulla est deleniti reiciendis dolores animi.</p>
-  </div>
-
-</div>
+<app-home></app-home>
 
 <!-- <input type="text" [(ngModel)]="coloreScelto"><button (click)="cambiaBG()">Cambia</button>
 <div id="contenitore-switch" [ngSwitch]="colore">

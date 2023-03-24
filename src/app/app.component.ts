@@ -18,10 +18,6 @@ export class AppComponent {
     this.colore = this.coloreScelto;
   }
 
-  evidenziato = false;
-
-  onEvidenziazione(){
-    this.evidenziato = !this.evidenziato;
-  }
+  
 
 }
