@@ -1,0 +1,43 @@
+@import "../../../../styles/colors.scss";
+
+.detail-image {
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.detail-title {
+  color: $primary-color-1;
+  font-size: 30px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.detail-description{
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: justify;
+}
+
+.border{
+  border: 2px solid $primary-color-1 !important;
+  padding: 20p !important;
+  border-radius: 10px !important;
+}
+
+.detail-difficulty{
+  color: $primary-color-1;
+  font-size: 30px;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.detail-data{
+  text-align: end;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}

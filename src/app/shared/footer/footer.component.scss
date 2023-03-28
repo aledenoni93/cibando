@@ -1,25 +1,66 @@
-.mat-icon {
-  height: 20px;
-  width: 20px;
-  font-size: 21px;
-  padding-top: 2px;
-}
+@import "../../../styles/colors.scss";
 
-.icona-cibando{
-  width: 60px;
-  margin-right: 5 px;
+.container-footer{
+  background-color: $primary-color-1;
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
 
-}
+  footer{
 
-.colore-testo{
-  color: white;
-}
+    .container-flex {
+       display: flex;
+       justify-content: space-between;
+    }
 
-.text-muted {
-  --bs-text-opacity: 1;
-  color: white !important;
-}
+    .container-logo {
+      display: flex;
+      align-items: center;
 
-.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-  max-width: 100%!important;
+      .nome-brand{
+        text-decoration: none;
+        font-size: 40px;
+        font-weight: bold;
+        color: $secondary-color-1;
+      }
+    }
+
+    .container-admin{
+
+      margin-right: 100px;
+
+      h3 {
+        color: $secondary-color-1;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      h5 {
+        color: #FFFFFF8C;
+        font-size: 15px;
+        margin-top: 15px;
+      }
+    }
+
+    .site-map{
+
+      margin-right: 100px;
+
+      h3 {
+        color: $secondary-color-1;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .map-link{
+      text-decoration: none;
+      color: #FFFFFF8C;
+      font-size: 15px;
+      }
+    }
+  }
+
 }
