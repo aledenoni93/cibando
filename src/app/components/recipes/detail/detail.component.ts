@@ -11,6 +11,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 })
 export class DetailComponent implements OnInit {
 
+  percorsoStelline = '../../../../assets/images/difficolta-';
   ricetta: Recipe;
 
   constructor(

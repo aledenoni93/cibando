@@ -4,8 +4,7 @@
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
       <p class="card-text">
-        <!-- {{recipe.description}} -->
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error tempore ratione ex sapiente mollitia assumenda quam optio recusandae maxime, modi quos quasi ducimus molestias doloribus nulla natus omnis a perferendis!
+        {{recipe.description | slice: 0:250}}...
       </p>
       <a class="btn btn-primary" routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}">Visualizza</a>
     </div>
