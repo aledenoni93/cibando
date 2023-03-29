@@ -1,4 +1,24 @@
+@import "../../../../styles/colors.scss";
+
 #main-container {
   text-align: center;
   margin-top: 30px;
+}
+
+.titolo {
+  margin-bottom: 10px;
+}
+
+.titolo-click {
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  padding-bottom: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: $primary-color-1;
 }

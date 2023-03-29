@@ -3,7 +3,7 @@
     <div class="detail-image" [ngStyle]="{'background-image': 'url(' + ricetta.image + ')'}"></div>
     <h3 class="detail-title">{{ricetta.title}}</h3>
     <P class="detail-description border">{{ricetta.description}}</P>
-    <div>
+    <div class="container-difficulty">
       <h3 class="detail-difficulty">Difficoltà:</h3>
       <img [src]="percorsoStelline + ricetta.difficulty + '.png'" alt="" class="difficulty">
     </div>
