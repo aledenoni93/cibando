@@ -7,8 +7,7 @@
       <h3 class="detail-difficulty">Difficoltà:</h3>
       <img [src]="percorsoStelline + ricetta.difficulty + '.png'" alt="" class="difficulty">
     </div>
-
-    <h5 class="detail-data">{{ricetta.date}}</h5>
+    <h5 class="detail-data">{{ricetta.date | date:'longDate'}}</h5>
   </div>
 </div>
 
