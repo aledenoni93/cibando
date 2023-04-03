@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,13 @@ export class HomeComponent {
   evidenziato = false;
   ricette: Recipe[];
 
-  constructor(private recipeService: RecipeService) {}
+  name: string;
+  email: string;
+
+  constructor(
+    private recipeService: RecipeService,
+    private userService: UserService)
+    {}
 
   ngOnInit(): void {
     this.recipeService.getRecipes().subscribe({
@@ -24,10 +31,31 @@ export class HomeComponent {
         console.log(error);
       }
     })
+    this.prendiDatiUtente();
   }
 
   onEvidenziazione(){
     this.evidenziato = !this.evidenziato;
   }
 
+  prendiDatiUtente(){
+    this.userService.datiUtente.subscribe((res: any) => {
+      localStorage.setItem('name', res.name);
+      localStorage.setItem('email', res.email);
+  });
+
+  if(localStorage.getItem("name")){
+    this.name = localStorage.getItem("name");
+    this.email = localStorage.getItem("email");
+  }
+  }
+
+  closeModal(){
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    localStorage.clear(); //pulisce tutto, non serve nel caso di scelta selettiva come quella sopra
+
+    this.name= "";
+    this.email= "";
+  }
 }

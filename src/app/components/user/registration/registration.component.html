@@ -86,48 +86,53 @@
                   <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="onSubmit()">
 
                     <div class="d-flex flex-row align-items-center mb-4">
+                      <i class=""><mat-icon>person</mat-icon></i>
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="text" id="form3Example1c" class="form-control" placeholder="Scrivi il tuo nome" name="name" formControlName="name"/>
-                        <label class="form-label" for="form3Example1c"><mat-icon>person</mat-icon>Il tuo nome</label>
+                        <label class="form-label" for="form3Example1c">Il tuo nome</label>
                         <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo nome è obbligatorio</p>
                       </div>
                     </div>
 
                     <div class="d-flex flex-row align-items-center mb-4">
+                      <i class=""><mat-icon> email</mat-icon></i>
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="email" id="form3Example3c" class="form-control" placeholder="Scrivi la tua email" name="email" formControlName="email" />
-                        <label class="form-label" for="form3Example3c"><mat-icon> email</mat-icon>La tua email</label>
+                        <label class="form-label" for="form3Example3c">La tua email</label>
                         <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').touched">Il campo email è obbligatorio</p>
                         <p class="help is-danger" *ngIf="form.controls['email'].hasError('email') && form.get('email').dirty && form.get('email').touched">Il campo email non contiene una email valida</p>
                       </div>
                     </div>
 
                     <div class="d-flex flex-row align-items-center mb-4">
+                      <i class=""><mat-icon> vpn_key</mat-icon></i>
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4c" class="form-control" placeholder="Inserisci la password" name="password" formControlName="password"/>
-                        <label class="form-label" for="form3Example4c"><mat-icon> vpn_key</mat-icon>Password</label>
+                        <!-- <input type="password" id="form3Example4c" class="form-control" placeholder="Inserisci la password" name="password" formControlName="password"/> -->
+                        <p-password [toggleMask]="true" [feedback]="false" class="form-control" formControlName="password" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"></p-password>
+                        <label class="form-label" for="form3Example4c">Password</label>
                         <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && !form.get('password').dirty && form.get('password').touched"> Il campo password è obbligatorio</p>
-                        <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').dirty"> La password deve essere lunga almeno 6 caratteri</p>
+                        <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern')"> Il campo password deve contenere almeno un carattere speciale,una minuscola, una maiuscola e un numero e deve essere lungo da 8 a 16 caratteri</p>
                       </div>
                     </div>
 
                     <div class="d-flex flex-row align-items-center mb-4">
+                      <i class=""><mat-icon> vpn_key</mat-icon></i>
                       <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="password" id="form3Example4cd" class="form-control" placeholder="Ripeti la password" name="repeatPassword" formControlName="ripetiPassword"/>
                         <label class="form-label" for="form3Example4cd">Ripeti la password</label>
                         <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && !form.get('ripetiPassword').dirty && form.get('ripetiPassword').touched"> Il campo password è obbligatorio</p>
-                        <p class="help is-danger" *ngIf="!form.get('ripetiPassword').valid && form.get('ripetiPassword').dirty"> La password deve essere lunga almeno 6 caratteri</p>
+                        <p class="help is-danger" *ngIf="form.getError('diversa') && form.get('ripetiPassword').touched">Attenzione, le due password non coincidono</p>
                       </div>
                     </div>
 
                     <div class="form-check d-flex justify-content-center mb-5 ">
                       <div class="check">
                       <input class="form-check-input me-2 check-box"type="checkbox" value="" id="form2Example3c" name="accetto"  formControlName="accetto"/>
-                        <label class="form-check-label" for="form2Example3">
+                        <label class="form-check-label" for="accetto">
                           I agree all statements in <a href="#!">Terms of service</a>
                         </label>
                         <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">Il campo accetta é necessario per proseguire</p>

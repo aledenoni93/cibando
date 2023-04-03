@@ -1,4 +1,4 @@
-@import "../../../styles/colors.scss";
+@import "../../../../styles/colors.scss";
 
 input.ng-invalid.ng-touched{
   border: 1px solid red;
@@ -9,7 +9,7 @@ input.ng-valid.ng-touched{
 }
 
 .colonna-dx{
-  background-image: url("../../../assets/images/image-registration-1.jpg");
+  background-image: url("../../../../assets/images/image-registration-1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius:  0px 25px 25px 0px;
@@ -35,4 +35,15 @@ p.help.is-danger{
   width: 70%;
   flex-direction: column;
   margin-top: 4px;
+}
+
+.mat-icon {
+  -webkit-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 66px;
+  width: 30px;
+  overflow: hidden;
 }
