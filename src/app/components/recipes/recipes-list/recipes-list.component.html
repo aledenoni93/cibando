@@ -3,5 +3,5 @@
   <div class= "titolo-click" >
     <h3 *ngIf="titoloRicetta">{{titoloRicetta}}</h3>
   </div>
-  <app-recipe-card [recipes]="ricette" (messaggio)="riceviTitolo($event)"></app-recipe-card>
+  <app-recipe-card (messaggio)="riceviTitolo($event)"></app-recipe-card>
 </div>

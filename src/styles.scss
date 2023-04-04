@@ -52,6 +52,88 @@ div#navbarNav {
   padding-left: 1135px;
 }
 
+.mat-h3, .mat-subtitle-1, .mat-typography .mat-h3, .mat-typography .mat-subtitle-1, .mat-typography h3 {
+  font: 400 16px/28px Roboto, sans-serif;
+  letter-spacing: .009375em;
+  margin: 0px !important;
+  margin-left: 15px !important;
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-modal-header-padding);
+  border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+  border-top-left-radius: var(--bs-modal-inner-border-radius);
+  border-top-right-radius: var(--bs-modal-inner-border-radius);
+  background-color: $primary-color-1;
+
+  .modal-titolo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.009375em;
+    margin: 0px !important;
+    margin-left: 15px !important;
+    color: white !important;
+  }
+
+  .btn-close {
+    /* padding: calc(var(--bs-modal-header-padding-y) * 0.5) calc(var(--bs-modal-header-padding-x) * 0.5); */
+    /* margin: calc(-0.5 * var(--bs-modal-header-padding-y)) calc(-0.5 * var(--bs-modal-header-padding-x)) calc(-0.5 * var(--bs-modal-header-padding-y)) auto; */
+    font-size: 25px !important;
+    margin: 0px 5px !important;
+    padding: 0 !important;
+  }
+
+}
+
+.modal-body {
+
+  .text {
+  margin: 0 0 12px !important;
+  font-size: 18px !important;
+  text-align: justify !important;
+}
+
+}
+
+.modal-footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
+  background-color: $primary-color-1 !important;
+  border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
+  border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+  border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+
+  .btn.button {
+    border: 3px solid white !important;
+    color: white !important;
+  }
+}
+
+p.titolo-paginatore {
+  font-size: 18px;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #b8614f !important;
+  border-color: black !important;
+  color: white !important;
+}
+
+.p-link:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem $primary-color-1 !important;
+}
+
 
 
 

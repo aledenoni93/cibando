@@ -129,12 +129,31 @@
                       </div>
                     </div>
 
+                    <div class="accordion" id="accordionTermini">
+                      <div class="accordion-item">
+                        <h3 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#terminiServizio" aria-expanded="false" aria-controls="terminiServizio">
+                            Visualizza i termini di servizio
+                          </button>
+                        </h3>
+                        <div id="terminiServizio" class="accordion-collapse collapse" data-bs-parent="#accordionTermini">
+                          <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="form-check d-flex justify-content-center mb-5 ">
+
+
+
                       <div class="check">
                       <input class="form-check-input me-2 check-box"type="checkbox" value="" id="form2Example3c" name="accetto"  formControlName="accetto"/>
                         <label class="form-check-label" for="accetto">
-                          I agree all statements in <a href="#!">Terms of service</a>
+                          Accetto tutte le<a (click)="openModal(modaleServizi)"> clausole di servizio</a>
                         </label>
+
                         <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">Il campo accetta é necessario per proseguire</p>
                     </div>
                     </div>
@@ -156,4 +175,36 @@
     </div>
   </section>
   </div>
+
+  <ng-template #modaleServizi let-modal>
+    <div class="modal-header">
+      <h3 class="modal-titolo">Termini di servizio</h3>
+      <button type="button" class="btn-close" aria-label="close"  (click)="modal.dismiss()"></button>
+    </div>
+
+    <div class="modal-body">
+      <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deleniti iste quam eum voluptatum natus accusamus non ipsum aut obcaecati temporibus repellendus, ipsa vero nulla harum, animi sequi expedita facilis.</p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn button" (click)="modal.dismiss()">ANNULLA</button>
+      <button type="button" class="btn button" (click)="modal.close()" ngbAutoFocus>AZIONE</button>
+    </div>
+  </ng-template>
+
+  <!-- <ng-template #modaleDue let-modal>
+    <div class="modal-header">
+      <button type="button" class="btn-close" aria-label="close"  (click)="modal.dismiss()"></button>
+      <h3>Termini di servizio</h3>
+    </div>
+
+    <div class="modal-body">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deleniti iste quam eum voluptatum natus accusamus non ipsum aut obcaecati temporibus repellendus, ipsa vero nulla harum, animi sequi expedita facilis.</p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn" (click)="modal.dismiss()">ANNULLA</button>
+      <button type="button" class="btn btn-primary" (click)="modal.close()" ngbAutoFocus>AZIONE</button>
+    </div>
+  </ng-template> -->
 
