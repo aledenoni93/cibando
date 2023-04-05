@@ -9,7 +9,7 @@ import { RegistrationComponent } from './components/user/registration/registrati
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'ricette', component: RecipesComponent, children: [
     {path: 'dettaglio/:title/:_id', component: DetailComponent},
