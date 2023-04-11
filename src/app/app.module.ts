@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
+import { ToastModule} from 'primeng/toast';
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
@@ -19,6 +22,10 @@ import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component'
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
+import { ChangeColorDirective } from './directives/change-color.directive';
+import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +39,10 @@ import { RegistrationComponent } from './components/user/registration/registrati
     DetailComponent,
     RecipesListComponent,
     RegistrationComponent,
+    NewRecipeComponent,
+    ChangeColorDirective,
+    EsempioCombineComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +54,9 @@ import { RegistrationComponent } from './components/user/registration/registrati
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
-    PaginatorModule
-
+    PaginatorModule,
+    HttpClientModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

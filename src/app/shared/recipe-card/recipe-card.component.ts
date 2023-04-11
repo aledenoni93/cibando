@@ -2,12 +2,15 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Router } from '@angular/router';
-import { take } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
+import { MessageService } from 'primeng/api';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
-  styleUrls: ['./recipe-card.component.scss']
+  styleUrls: ['./recipe-card.component.scss'],
+  providers: [MessageService]
 })
 export class RecipeCardComponent implements OnInit, OnDestroy {
 
@@ -17,17 +20,34 @@ export class RecipeCardComponent implements OnInit, OnDestroy {
 
  page = 1;
  ricettePerPagina = 4;
- recipes: Recipe[];
  ricetteTotali: number;
+ recipes: Recipe[];
+ loading= true;
 
- constructor(
+ ruolo: any
+
+//   recipes$: Observable<Recipe[]> = this.recipeService.getRecipes().pipe(
+//   map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
+//   map(res => this.ricette = res)
+//   );
+//   ricette: Recipe[];
+
+
+  constructor(
   private recipeService: RecipeService,
-  private router: Router
+  private router: Router,
+  private userService: UserService,
+  private messageService: MessageService
   ) {}
 
- ngOnInit(): void {
+  ngOnInit(): void {
     this.prendiRicette();
       // this.cardHome();
+      if(JSON.parse(localStorage.getItem('user')) !== null){
+        this.userService.userRole.subscribe({
+          next: res => this.ruolo = res
+        })
+      }
   }
 
   ngOnDestroy(): void {
@@ -37,10 +57,14 @@ export class RecipeCardComponent implements OnInit, OnDestroy {
   prendiRicette(){
     this.recipeService.getRecipes().pipe(take(1)).subscribe({
       next: (res) => {
+        this.loading = false;
         this.recipes = res;
         this.ricetteTotali = res.length;
         if(this.pag){
           this.recipes = this.recipes.sort((a, b) => b._id - a._id).slice(0, 4);
+        }
+        if(res){
+          this.messageService.add({severity: 'success', summary:'Completato', detail: 'Ricette caricate correttamente', life: 3000})
         }
       },
       error: (error) => {

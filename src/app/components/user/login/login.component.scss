@@ -1,0 +1,42 @@
+@import "../../../../styles/colors.scss";
+
+.container-form {
+  width: 40%;
+  margin: 5% 31%;
+  border: 2px solid $primary-color-1;
+  border-radius: 15px;
+}
+
+input.form-login {
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 3%;
+  height: 35px;
+}
+
+
+label.form-label {
+  padding-left: 5%;
+  font-size: 20px;
+  padding-bottom: 5%;
+}
+
+h5.text-reg {
+  text-align: center;
+}
+
+.button {
+  margin-left: 40%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+h5.text-reg {
+  font-size: 15px;
+}
+
+a.link-registrazione {
+  text-decoration: none;
+  color: $primary-color-1;
+  font-weight: bold;
+}

@@ -1,13 +1,14 @@
+
 <div class="container-cards">
   <div class="container-pagination" *ngIf="pag != 'home'">
     <div>
-      <p class="titolo-paginatore"><strong>{{ricettePerPagina}}</strong> Ricette su un totale di <strong>{{ricetteTotali}}</strong> ricette, pagina corrente: <strong>{{page}}</strong></p>
+      <p class="titolo-paginatore"><strong>{{ricettePerPagina}}</strong> Ricette su un totale di <strong>{{recipes.length}}</strong> ricette, pagina corrente: <strong>{{page}}</strong></p>
     </div>
 
-    <p-paginator (onPageChange)="paginate($event)" [rows]="ricettePerPagina" [totalRecords]="ricetteTotali" (rowsPerPageOptionsChange)="ricettePerPagina"></p-paginator>
+    <p-paginator (onPageChange)="paginate($event)" [rows]="ricettePerPagina" [totalRecords]="recipes.length" (rowsPerPageOptionsChange)="ricettePerPagina"></p-paginator>
   </div>
 
-  <div class="card-container" *ngFor="let recipe of recipes | slice: (page * ricettePerPagina) - ricettePerPagina : page * ricettePerPagina ">
+  <div class="card-container" *ngFor="let recipe of recipes  | slice: (page * ricettePerPagina) - ricettePerPagina : page * ricettePerPagina ">
     <div class="card">
       <div class="card-image" [ngStyle]="{'background-image': 'url(' + recipe.image + ')'}" (click)="inviaTitolo(recipe.title)"></div>
       <div class="card-body">
@@ -17,7 +18,17 @@
         </p>
         <a class="btn btn-primary" routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}" *ngIf="!pag" >Dettaglio</a>
         <a class="btn btn-primary" routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}" *ngIf="pag" >Visualizza</a>
+
+        <a class="btn btn-primary delete" *ngIf="ruolo === 'admin'">Elimina</a>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template [ngIf]="loading">
+  <div class="loading">
+    <img src="../../../assets/images/spinner-icon.gif" width="250px">
+  </div>
+</ng-template>
+
+<p-toast position="bottom-right"></p-toast>

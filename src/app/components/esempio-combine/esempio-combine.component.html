@@ -1,0 +1,28 @@
+<ng-template [ngIf]="gruppiCombinati$ | async">
+  <div>
+    <h3 class="title">Clienti</h3>
+    <ul>
+      <li class="nomi" *ngFor="let cliente of gruppi[0]">
+         {{cliente.name || cliente}}
+      </li>
+    </ul>
+    <h3 class="title" >Rivenditori</h3>
+    <ul>
+      <li class="nomi" *ngFor="let cliente of gruppi[1]">
+         {{cliente.name || cliente}}
+      </li>
+    </ul>
+    <h3 class="title">Azienda</h3>
+    <ul>
+      <li class="nomi" *ngFor="let cliente of gruppi[2]">
+         {{cliente.name || cliente}}
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="loading">
+  <div class="loading">
+    <img src="../../../assets/images/spinner-icon.gif" width="250px">
+  </div>
+</ng-template>

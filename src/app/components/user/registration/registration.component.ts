@@ -4,6 +4,7 @@ import { CustomValidator } from '../customValidator';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
@@ -11,6 +12,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
+
+  userInserito: any;
+
+  name: string;
+  email: string;
+  password: string;
+
 
   constructor(
      private userService : UserService,
@@ -29,16 +37,33 @@ export class RegistrationComponent {
   [CustomValidator.MatchValidator('password', 'ripetiPassword')]
   );
 
-  onSubmit(){
+  ngOnInit(){
+      this.prendiDatiUser;
+  }
+
+  aggiungiUser(){
     //console.log(this.form.value);
-    const user = {
-      name: this.form.value.name,
-      email: this.form.value.email
-    }
-
+    const user = this.form.value
+    this.userService.insertUser(user).pipe(take(1)).subscribe({
+      next: (res) => {
+        console.log('response is ', res)
+        this.userInserito = res;
+      },
+      error: (err) =>{
+        console.log(err)
+      }
+    })
     this.userService.datiUtente.next(user);
-
     this.router.navigate(['home']);
+  }
+
+  prendiDatiUser(){
+    this.userService.datiUtente.subscribe((res: any) => {
+      this.name = res.name;
+      this.email = res.email;
+      this.password = res.password;
+
+    })
   }
 
   openModal(content: any, titolo?: string){ //content è sempre obbligatorio

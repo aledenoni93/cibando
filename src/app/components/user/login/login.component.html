@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="container-form">
+    <form class="form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)" >
+      <div class="input-form">
+      <label class="form-label" for="email">La tua email</label>
+      <input type="email" class="form-login" name="email" ngModel/>
+      </div>
+      <div class="input-form">
+      <label class="form-label" for="Password">Password</label>
+      <p-password [toggleMask]="true" [feedback]="false" class="form-login" name="password" ngModel></p-password>
+      </div>
+
+      <div class="button">
+        <button class="btn btn-primary btn-lg">Accedi</button>
+      </div>
+      <div class="alert" *ngIf ="loginError">
+        {{loginError}}
+      </div>
+    </form>
+  </div>
+  <h5 class="text-reg">Se non sei ancora registrato,<a class="link-registrazione" routerLink="/registrazione">Registrati!</a></h5>
+</div>
+
+<p-toast position="bottom-right"></p-toast>

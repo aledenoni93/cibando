@@ -1,0 +1,223 @@
+<!-- <div class="container-registration">
+  <section class="vh-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+
+              <div class="row justify-content-center contenitore">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Inserisci nuova ricetta</p>
+
+                  <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" class="form-control" placeholder="Titolo ricetta"  name="title" formControlName="title"/>
+                        <label class="form-label" for="form3Example1c">Titolo</label>
+                        <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo nome è obbligatorio</p>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <textarea name="description" id="description" cols="30" rows="10" class="form-control" placeholder="Descrivi la tua ricetta"  formControlName="description"></textarea>
+                        <label class="form-label" for="form3Example3c">Descrizione</label>
+                        <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').touched">Il campo email è obbligatorio</p>
+                        <p class="help is-danger" *ngIf="form.controls['email'].hasError('email') && form.get('email').dirty && form.get('email').touched">Il campo email non contiene una email valida</p>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="url" id="form3Example4c" class="form-control" placeholder="Inserisci l'immagine" name="image" formControlName="image"/>
+                        <label class="form-label" for="form3Example4c">Immagine</label>
+                         <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && !form.get('password').dirty && form.get('password').touched"> Il campo password è obbligatorio</p>
+                        <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern')"> Il campo password deve contenere almeno un carattere speciale,una minuscola, una maiuscola e un numero e deve essere lungo da 8 a 16 caratteri</p>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="number" id="form3Example4cd" class="form-control" placeholder="Difficoltà" name="difficulty" formControlName="difficulty"/>
+                        <label class="form-label" for="form3Example4cd">Difficoltà</label>
+                         <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && !form.get('ripetiPassword').dirty && form.get('ripetiPassword').touched"> Il campo password è obbligatorio</p>
+                        <p class="help is-danger" *ngIf="form.getError('diversa') && form.get('ripetiPassword').touched">Attenzione, le due password non coincidono</p>
+                      </div>
+                    </div>
+
+                    <div class="form-check d-flex justify-content-center mb-5 ">
+
+
+
+                      <div class="check">
+                        <input class="form-check-input me-2 check-box"type="checkbox" value="" id="form2Example3c" name="accetto"  formControlName="accetto"/>
+                          <label class="form-check-label" for="accetto">
+                            Vuoi che sia pubblicata?
+                          </label>
+                      </div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-primary btn-lg" (click)="openModal(modaleRicetta)" >Salva Ricetta</button>
+                    </div>
+
+                  </form>
+
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 colonna-dx">
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div> -->
+
+  <!-- <ng-template [ngIf]="title">
+    <div id="container-ricetta">
+      <div id="dati-ricetta">
+        <h2>Grazie per aver inserito la ricetta, ecco il riepilogo:</h2>
+        <img [src]="image" class="immagine-ricetta">
+        <ul>
+          <li>Titolo: {{title}}</li>
+          <li>Descrizione: {{description}}</li>
+          <li>Difficoltà : {{difficulty}}</li>
+        </ul>
+        <button class="btn btn-primary btn-lg" (click)="closeModal()">Chiudi</button>
+        <button class="btn btn-primary btn-lg">Inserisci nuova ricetta</button>
+      </div>
+    </div>
+  </ng-template> -->
+
+  <!-- <ng-template #modaleRicetta let-modal>
+    <div class="modal-header">
+      <h3 class="modal-title">Grazie per aver inserito la ricetta, ecco il riepilogo:</h3>
+      <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col">
+          <div class="testo-riepilogo">
+            <ul>
+              <li>Titolo: {{title}}</li>
+              <li>Descrizione: {{description}}</li>
+              <li>Difficoltà : {{difficulty}}</li>
+              <li>Pubblicato: {{published}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col">
+          <img [src]="image" class="immagine-ricetta">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-modal" (click)="modal.dismiss()">CHIUDI</button>
+      <button type="button" class="btn btn-modal" (click)="modal.close()" ngbAutoFocus>AZIONE</button>
+    </div>
+  </ng-template> -->
+
+  <div class="container-form">
+    <section class="vh-100">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Inserisci una <br> nuova ricetta</p>
+                  <form class="mx-1 mx-md-4" #f="ngForm" [formGroup]="form" (ngSubmit)="aggiungiRicette()">
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="title">Titolo</label>
+                        <input type="text" name="title" class="form-control" placeholder="Titolo" formControlName="title"/>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="description">Descrizione</label>
+                        <textarea cols="30" rows="5" name="description" class="form-control" placeholder="Descrizione" formControlName="description"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="password">Immagine ricetta</label>
+                        <input type="url" name="image" class="form-control" placeholder="Link immagine" formControlName="image"/>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="difficulty">Difficoltà</label>
+                        <input type="number" name="difficulty" class="form-control" formControlName="difficulty"/>
+                      </div>
+                    </div>
+
+                    <div class="form-check d-flex justify-content-center mb-5">
+                      <div class="check">
+                        <input class="form-check-input me-2" type="checkbox" value="" name="published" formControlName="published"/>
+                        <label class="form-check-label" for="published">
+                          Pubblicare la ricetta?
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid" (click)="openModal(modaleRicetta)">Inserisci</button>
+                    </div>
+
+                  </form>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 colonna-dx">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <p-toast position="bottom-right"></p-toast>
+
+  <ng-template #modaleRicetta let-modal>
+
+    <div class="modal-header">
+      <h3 class="modal-title">Grazie per aver inserito la ricetta, ecco il riepilogo:</h3>
+      <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-8">
+          <div class="testo-riepilogo">
+            <ul>
+              <li>Titolo: {{ricettaInserita.title}}</li>
+              <li>Descrizione: {{ricettaInserita.description}}</li>
+              <li>Difficoltá : {{ricettaInserita.difficulty}}</li>
+              <li>Pubblicato: {{ricettaInserita.published}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-4">
+          <img [src]="ricettaInserita.image" class="immagine-ricetta">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-modal" (click)="modal.dismiss()">CHIUDI</button>
+      <button type="button" class="btn btn-modal" (click)="modal.onNewRecipe()" ngbAutoFocus>NUOVA RICETTA</button>
+    </div>
+
+  </ng-template>

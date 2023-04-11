@@ -48,8 +48,26 @@ h2 {
   height: 20px !important;
 }
 
+.container-form .input-form .p-password {
+  width: 50.5% !important;
+  height: 35px !important;
+  border: 1px solid #767575 !important;
+  margin-left: 14% !important;
+}
+
+input.p-inputtext.p-component.p-element.ng-tns-c44-0.p-password-input {
+  margin-top: 6px;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none !important;
+  border-color: #2196F3;
+}
+
 div#navbarNav {
-  padding-left: 1135px;
+  padding-left: 800px;
 }
 
 .mat-h3, .mat-subtitle-1, .mat-typography .mat-h3, .mat-typography .mat-subtitle-1, .mat-typography h3 {
@@ -134,7 +152,17 @@ p.titolo-paginatore {
   box-shadow: 0 0 0 0.2rem $primary-color-1 !important;
 }
 
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+  h2 {
+    font-size: 28px !important;
+  };
 
+  .carousel-caption {
+    h3 {
+      font-size: 28px;
+    }
+  }
+ }
 
 
 

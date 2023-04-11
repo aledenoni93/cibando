@@ -6,6 +6,9 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
+import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 
 const routes: Routes = [
@@ -16,6 +19,9 @@ const routes: Routes = [
     {path: '', pathMatch: 'full', component: RecipesListComponent}
   ]},
   {path: 'registrazione', component: RegistrationComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'nuova-ricetta', component: NewRecipeComponent},
+  {path: 'combine', component: EsempioCombineComponent},
   {path: '**', redirectTo: 'home'} //va sempre in chiusura, se non viene trovato il percorso digitato riporta in home
 ];
 
