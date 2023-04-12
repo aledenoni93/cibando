@@ -9,6 +9,8 @@ import { RegistrationComponent } from './components/user/registration/registrati
 import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { LoggedInGuard } from './logged-in.guard';
 
 
 const routes: Routes = [
@@ -20,6 +22,7 @@ const routes: Routes = [
   ]},
   {path: 'registrazione', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'profilo', component: ProfileComponent, canActivate: [LoggedInGuard]},
   {path: 'nuova-ricetta', component: NewRecipeComponent},
   {path: 'combine', component: EsempioCombineComponent},
   {path: '**', redirectTo: 'home'} //va sempre in chiusura, se non viene trovato il percorso digitato riporta in home

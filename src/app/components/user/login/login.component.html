@@ -2,7 +2,7 @@
   <div class="container-form">
     <form class="form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)" >
       <div class="input-form">
-      <label class="form-label" for="email">La tua email</label>
+      <label class="form-label" for="email">Email</label>
       <input type="email" class="form-login" name="email" ngModel/>
       </div>
       <div class="input-form">
@@ -13,7 +13,7 @@
       <div class="button">
         <button class="btn btn-primary btn-lg">Accedi</button>
       </div>
-      <div class="alert" *ngIf ="loginError">
+      <div class="alert" *ngIf="loginError">
         {{loginError}}
       </div>
     </form>

@@ -23,5 +23,4 @@ export class HeaderComponent implements DoCheck {
     this.router.navigate(['/login']);
   }
 
-
 }

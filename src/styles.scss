@@ -49,14 +49,14 @@ h2 {
 }
 
 .container-form .input-form .p-password {
-  width: 50.5% !important;
+  width: 50% !important;
   height: 35px !important;
   border: 1px solid #767575 !important;
-  margin-left: 14% !important;
+  margin-left: 3% !important;
 }
 
 input.p-inputtext.p-component.p-element.ng-tns-c44-0.p-password-input {
-  margin-top: 6px;
+  margin-top: 7px;
 }
 
 .p-inputtext:enabled:focus {
@@ -67,7 +67,7 @@ input.p-inputtext.p-component.p-element.ng-tns-c44-0.p-password-input {
 }
 
 div#navbarNav {
-  padding-left: 800px;
+  padding-left: 700px;
 }
 
 .mat-h3, .mat-subtitle-1, .mat-typography .mat-h3, .mat-typography .mat-subtitle-1, .mat-typography h3 {
@@ -150,6 +150,24 @@ p.titolo-paginatore {
   outline: 0 none;
   outline-offset: 0;
   box-shadow: 0 0 0 0.2rem $primary-color-1 !important;
+}
+
+.descrizione-ricetta .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 200px!important;
+  max-width: 440px!important;
+}
+
+.note .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 200px!important;
+  max-width: 387px!important;
+  margin-left: 27px!important;
+}
+
+.ck .ck-sticky-panel__content{
+  max-width: 387px!important;
+  margin-left: 27px!important;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 480px) {

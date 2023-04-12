@@ -72,7 +72,7 @@
 </div> -->
 
 <div class="container-registration">
-  <section class="vh-100">
+  <section>
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
@@ -103,6 +103,14 @@
                         <label class="form-label" for="form3Example3c">La tua email</label>
                         <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').touched">Il campo email è obbligatorio</p>
                         <p class="help is-danger" *ngIf="form.controls['email'].hasError('email') && form.get('email').dirty && form.get('email').touched">Il campo email non contiene una email valida</p>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <ckeditor [editor]="Editor" [config]="editorConfig" class="note" formControlName="note"></ckeditor>
+                        <label class="form-label note" for="Note Aggiuntive">Note aggiuntive</label>
                       </div>
                     </div>
 

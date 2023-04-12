@@ -14,7 +14,7 @@
       <div class="card-body">
         <h5 class="card-title">{{recipe.title}}</h5>
         <p class="card-text">
-          {{recipe.description | slice: 0:250}}...
+          <span [innerHTML]="recipe.description | slice: 0:250">...</span>
         </p>
         <a class="btn btn-primary" routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}" *ngIf="!pag" >Dettaglio</a>
         <a class="btn btn-primary" routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}" *ngIf="pag" >Visualizza</a>

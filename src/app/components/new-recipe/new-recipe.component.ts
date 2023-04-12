@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { MessageService } from 'primeng/api';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 
 @Component({
@@ -30,7 +31,46 @@ export class NewRecipeComponent implements OnInit {
     image: new FormControl('', Validators.required),
     published: new FormControl(false),
     difficulty: new FormControl('', [Validators.required, Validators.min(1), Validators.max(5)]),
-  })
+  });
+
+  Editor = ClassicEditorBuild;
+
+  editorConfig = {
+    toolbar: {
+        items: [
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'indent',
+            'outdent',
+            '|',
+            'codeBlock',
+            'blockQuote',
+            'insertTable',
+            'undo',
+            'redo',
+        ]
+    },
+    image: {
+        toolbar: [
+            'imageStyle:full',
+            'imageStyle:side',
+            '|',
+            'imageTextAlternative'
+        ]
+    },
+    table: {
+        contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+        ]
+    },
+    height: 300,
+};
 
   constructor(
     private recipeService: RecipeService,

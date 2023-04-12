@@ -8,6 +8,10 @@ input.ng-valid.ng-touched{
   border: 1px solid rgb(7, 216, 7);
 }
 
+label.form-label.note {
+  margin-left: 27px;
+}
+
 .colonna-dx{
   background-image: url("../../../../assets/images/image-registration-1.jpg");
   background-size: cover;
@@ -46,6 +50,10 @@ p.help.is-danger{
   height: 66px;
   width: 30px;
   overflow: hidden;
+}
+
+section {
+  margin-top: 20px;
 }
 
 .accordion {
