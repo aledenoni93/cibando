@@ -6,7 +6,7 @@
     <li>Nome: {{user.name}}</li>
     <li>Email: {{user.email}} </li>
     <li>Ruolo: {{user.role}}</li>
-    <li>Note aggiuntive: <span [innerHTML]="user.note ? user.note : 'nessuna nota'"></span></li>
+    <li>Note aggiuntive: <span [innerHTML]="user.note ? user.note : 'nessuna nota'">{{user.note}}</span></li>
     <li>Data di iscrizione: {{data}}</li>
     <li>Ultima modifica dei dati: {{aggiornamento}}</li>
   </ul>

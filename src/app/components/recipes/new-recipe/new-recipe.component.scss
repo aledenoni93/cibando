@@ -1,4 +1,4 @@
-@import "../../../styles/colors.scss";
+@import "../../../../styles/colors.scss";
 
 // input.ng-invalid.ng-touched{
 //   border: 1px solid red;
@@ -180,7 +180,7 @@ p.help.is-danger {
 // }
 
 .colonna-dx{
-  background-image: url("../../../assets/images/sfondo-pagina-nuovaRicetta.jpg");
+  background-image: url("../../../../assets/images/sfondo-pagina-nuovaRicetta.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius:  0px 25px 25px 0px;
