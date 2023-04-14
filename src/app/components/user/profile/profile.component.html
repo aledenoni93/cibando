@@ -1,13 +1,13 @@
 <div class="main-container">
 
-  <h2>Ecco i tuoi dati</h2>
+  <h2 class="titolo">Ecco i tuoi dati</h2>
 
   <ul>
-    <li>Nome: {{user.name}}</li>
-    <li>Email: {{user.email}} </li>
-    <li>Ruolo: {{user.role}}</li>
-    <li>Note aggiuntive: <span [innerHTML]="user.note ? user.note : 'nessuna nota'">{{user.note}}</span></li>
-    <li>Data di iscrizione: {{data}}</li>
-    <li>Ultima modifica dei dati: {{aggiornamento}}</li>
+    <li class="dettaglio">Nome: <span class="valore-dettaglio" >{{user.name}}</span></li>
+    <li class="dettaglio">Email: <span class="valore-dettaglio">{{user.email}}</span></li>
+    <li class="dettaglio" >Ruolo: <span class="valore-dettaglio">{{user.role}}</span></li>
+    <li class="dettaglio" >Note aggiuntive: <span [innerHTML]="user.note ? user.note : 'nessuna nota'" class="valore-dettaglio">{{user.note}}</span></li>
+    <li class="dettaglio">Data di iscrizione: <span class="valore-dettaglio">{{data}}</span></li>
+    <li class="dettaglio">Ultima modifica dei dati: <span class="valore-dettaglio">{{aggiornamento}}</span></li>
   </ul>
 </div>

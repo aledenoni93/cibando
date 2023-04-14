@@ -20,7 +20,8 @@ export class AuthService {
     const user = {
       name: res.name,
       email: res.email,
-      password: res.password
+      password: res.password,
+      role: res.role
     }
 
     this.userService.userRole.next(res.role);
@@ -29,6 +30,11 @@ export class AuthService {
 
   isLogged(): boolean {
     return JSON.parse(localStorage.getItem('user')) !== null;
+  }
+
+  isAdmin(): boolean {
+    const userRole = JSON.parse(localStorage.getItem('user.role'));
+    return userRole && JSON.parse(userRole) === 'admin';
   }
 
   logOut(): void {

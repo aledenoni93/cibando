@@ -22,14 +22,16 @@
             </li>
 
             <li class="nav-item user" *ngIf="!authService.isLogged()">
-              <a class="nav-link" routerLink="login"><mat-icon>person</mat-icon>Accedi</a>
+              <a class="nav-link" routerLink="user/login"><mat-icon>person</mat-icon>Accedi</a>
             </li>
             <li class="nav-item user" *ngIf="authService.isLogged()">
               <span class="name">Ciao {{user.name}}</span>
-              <a class="nav-link" routerLink="profilo"> - PROFILO</a>
+              <a class="nav-link" routerLink="user/profilo"> - PROFILO</a>
               <a class="nav-link" (click)="logOut()"><mat-icon>person</mat-icon> - ESCI</a>
             </li>
           </ul>
+          <input type="search" class="search-form" placeholder="Ricerca..." [(ngModel)]="ricerca" (keyup.enter)="result()">
+          <button class="search" (click)="result()"><mat-icon class="lente">search</mat-icon></button>
         </div>
     </div>
   </nav>
